@@ -1,0 +1,50 @@
+{
+  "name": "img-resizer",
+  "version": "1.0.0",
+  "productName": "Image Resizer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon main.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^32.0.2",
+    "electron-builder": "^25.0.5",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "resize-img": "^1.1.2",
+    "toastify-js": "^1.12.0"
+  },
+  "build": {
+    "appId": "com.yourname.imgresizer",
+    "productName": "Image Resizer",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "path/to/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
